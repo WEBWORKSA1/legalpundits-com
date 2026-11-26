@@ -153,7 +153,7 @@ def breadcrumbs_ld(crumbs, path):
 
 
 def header_html():
-    links = "".join('<li><a href="%%ROOT%%%s" data-nav="%s">%s</a></li>' % (u, u, esc(t)) for t, u in NAV)
+    links = "".join('<li%s><a href="%%ROOT%%%s" data-nav="%s">%s</a></li>' % (' class="nav-dup"' if u == "case-review/" else "", u, u, esc(t)) for t, u in NAV)
     return f'''<header class="site-header">
   <div class="container nav-wrap">
     <a class="brand" href="%ROOT%" aria-label="LegalPundits home">{LOGO_SVG}<span class="brand-text">Legal<span>Pundits</span></span></a>
